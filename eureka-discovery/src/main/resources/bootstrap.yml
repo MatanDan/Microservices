@@ -1,6 +1,12 @@
 server:
-  port: 8761
+  port: ${PORT:8761}
 
 spring:
   application:
     name: discovery-server
+
+    cloud:
+      config:
+        discovery:
+          enabled: true
+          service-id: config-server

@@ -1,6 +1,12 @@
 server:
-  port: 80
+  port: ${PORT:1235}
 
 spring:
   application:
     name: mailing
+
+    cloud:
+      config:
+        discovery:
+          enabled: true
+          service-id: config-server
