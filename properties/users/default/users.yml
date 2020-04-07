@@ -1,8 +1,2 @@
-server:
-  tomcat:
-    basedir: C:\\Users\\Matan\\IdeaProjects\\Microservices\\users
-    accesslog:
-      enabled: true
-
 matan:
   value: test-value from Matan's git!!!
