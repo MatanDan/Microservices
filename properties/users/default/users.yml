@@ -1,5 +1,6 @@
 server:
   tomcat:
+    basedir: C:\\Users\\Matan\\IdeaProjects\\Microservices\\users
     accesslog:
       enabled: true
 
