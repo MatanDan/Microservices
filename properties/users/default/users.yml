@@ -1,2 +1,7 @@
+server:
+  tomcat:
+    accesslog:
+      enabled: true
+
 matan:
   value: test-value from Matan's git!!!
