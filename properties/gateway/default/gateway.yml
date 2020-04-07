@@ -1,4 +1,4 @@
 zuul:
   routes:
     users: /api/users/**
-    mailing : /mailing/**
+    mailing : /api/mailing/**
