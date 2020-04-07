@@ -3,4 +3,12 @@ server:
 
 spring:
   application:
-    name: ms-config-server
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MatanDan/Microservices
+          search-paths:
+            - "properties/{application}/{profile}"

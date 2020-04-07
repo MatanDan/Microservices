@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.matan</groupId>
-	<artifactId>config-server</artifactId>
+	<artifactId>zuul-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>config-server</name>
-	<description>Configurations by git</description>
+	<name>zuul-gateway</name>
+	<description>Gateway microservice for routing</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -26,7 +26,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
