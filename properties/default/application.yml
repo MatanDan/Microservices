@@ -6,5 +6,5 @@ spring:
     stream:
       bindings:
         greetingChannel:
-          destination: grettings
+          destination: greetings
           
