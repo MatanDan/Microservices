@@ -2,7 +2,7 @@
 This project contains microservices using the following technologies:
 * Eureka for services discovery.
 * Zuul for gateway and proxying.
-* RabbitMQ for events and messages between services.
+* Spring Cloud Streaming with RabbitMQ binder, for events and messages between services.
 * Spring Cloud Config Server for dynamic and encrypted configuration.
 
 ## Microservices modules:
