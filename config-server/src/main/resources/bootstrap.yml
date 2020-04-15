@@ -13,6 +13,3 @@ spring:
           search-paths:
             - "properties/{application}/{profile}"
             - "properties/global/{profile}"
-
-encrypt:
-  key: 6jiQ0zelffX6KNrl9kutHXJRQgri5J5U
