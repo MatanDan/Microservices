@@ -1,12 +1,15 @@
 package com.matan.users.controllers;
 
+import brave.ScopedSpan;
+import brave.Tracer;
 import com.matan.users.messagings.MessagesBinding;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,13 +20,19 @@ import javax.annotation.PostConstruct;
 @RequestMapping()
 public class UsersController {
 
+    private final Logger logger = LoggerFactory.getLogger(UsersController.class);
+
     @Value("${matan.value: default}")
     private String name;
 
-    @Autowired
-    private MessagesBinding messagesBinding;
-
+    private final MessagesBinding messagesBinding;
+    private final Tracer tracer;
     private MessageChannel greetChannel;
+
+    public UsersController(MessagesBinding messagesBinding, Tracer tracer) {
+        this.messagesBinding = messagesBinding;
+        this.tracer = tracer;
+    }
 
     @PostConstruct
     public void initMessaging() {
@@ -32,6 +41,15 @@ public class UsersController {
 
     @GetMapping("/check")
     public ResponseEntity<String> checkConfig() {
+        tracer.currentSpan().tag("user", "matan");
+        ScopedSpan span = tracer.startScopedSpan("customSpan");
+        try {
+            span.tag("property", "value-matan");
+        } catch (Exception e) {
+            logger.error(e.toString());
+        } finally {
+            span.finish();
+        }
         return ResponseEntity.ok(name);
     }
 
