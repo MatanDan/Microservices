@@ -4,6 +4,7 @@ This project contains microservices using the following technologies:
 * Zuul for gateway and proxying.
 * Spring Cloud Streaming with RabbitMQ binder, for events and messages between services.
 * Spring Cloud Config Server for dynamic and encrypted configuration.
+* Zipking and Spring Cloud Sleuth for HTTP requests tracing.
 
 ## Microservices modules:
 ### eureka-discovery
@@ -26,3 +27,6 @@ Publishes events using RabbitMQ.
 A super-simple microservice which exposes data from user's microservice, uses Spring Cloud's and Eureka's client side load balancing.
 
 Listens for events using RabbitMQ.
+
+### zipkin
+It is recommended to run Zipkin Server, using one of the following options: https://zipkin.io/pages/quickstart.
