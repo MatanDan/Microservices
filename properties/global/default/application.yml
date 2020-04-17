@@ -2,6 +2,10 @@ spring:
   rabbitmq:
     addresses: '{cipher}0b6408fb1656e18c8fcf16942484b4336cacd6ea3b6aad372004e46a2ca71d8ad14bdacbb5770ba42ec4aaaa3eb298a32b156c30deae7aa06de002f125362526096948dee6ddc529b44a64549040156e2935a30d5e7f69ec1919d153ac37c322551ff069fd7ca62dafa428c03a75b810'
   
+  sleuth:
+    sampler:
+      probability: 1.0
+
   cloud:
     stream:
       bindings:
